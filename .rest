@@ -6,3 +6,8 @@ GET http://localhost:8080/contacts/650c5812c06bc031e32200a1
 
 ###
 
+GET https://cse-341-project1-se7z.onrender.com/contacts
+
+###
+
+GET https://cse-341-project1-se7z.onrender.com/contacts/650c5812c06bc031e32200a1
