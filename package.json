@@ -1,0 +1,29 @@
+{
+  "name": "contacts",
+  "version": "1.0.0",
+  "description": "My first project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/natelandrum/CSE-341-Project1.git"
+  },
+  "author": "Nathan Landrum",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/natelandrum/CSE-341-Project1/issues"
+  },
+  "homepage": "https://github.com/natelandrum/CSE-341-Project1#readme",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongodb": "^6.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
