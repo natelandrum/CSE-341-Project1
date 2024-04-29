@@ -1,9 +1,11 @@
-const router = require('express').Router();
+const router = require("express").Router();
 
-router.get("/", (req, res) => {
-    res.send("Hello World");
+router.use("/api-docs", require("./swagger"))
+.use("/contacts", require("./contacts"))
+.get("/", (req, res) => {
+  res.send(
+    "Welcome to the contacts API. You can try the API out at /api-docs."
+  );
 });
-
-router.use("/contacts", require("./contacts"));
 
 module.exports = router;
