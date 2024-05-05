@@ -2,12 +2,12 @@ const mongodb = require("../db/connect");
 const ObjectId = require("mongodb").ObjectId;
 
 const getAllContacts = async (req, res) => {
-  const result = await mongodb
-    .getDb()
-    .db()
-    .collection("contacts")
-    .find();
-  result.toArray().then((contacts) => {
+  const result = await mongodb.getDb().db().collection("contacts").find();
+  result.toArray(err => {
+    if (err) {
+      res.status(400).json({ message: err });
+    }
+  }).then((contacts) => {
     res.setHeader("Content-Type", "application/json");
     res.status(200).json(contacts);
   });
@@ -20,7 +20,11 @@ const getContact = async (req, res) => {
     .db()
     .collection("contacts")
     .find({ _id: userId });
-  result.toArray().then((contacts) => {
+  result.toArray(err => {
+    if (err) {
+      res.status(400).json({ message: err });
+    }
+  }).then((contacts) => {
     res.setHeader("Content-Type", "application/json");
     res.status(200).json(contacts[0]);
   });
@@ -43,7 +47,9 @@ const createContact = async (req, res) => {
   if (response.acknowledged) {
     res.status(204).send();
   } else {
-    res.status(500).json(response.error || { message: "Failed to create contact" });
+    res
+      .status(500)
+      .json(response.error || { message: "Failed to create contact" });
   }
 };
 

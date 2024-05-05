@@ -5,18 +5,14 @@
     "description": "API to manage contacts",
     "version": "1.0.0"
   },
-  "host": "cse-341-project1-se7z.onrender.com",
+  "host": "localhost:8080",
   "basePath": "/",
-  "schemes": [
-    "https"
-  ],
+  "schemes": ["http"],
   "paths": {
     "/contacts/": {
       "get": {
         "description": "Get all contacts",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "responses": {
           "200": {
             "description": "OK"
@@ -64,9 +60,7 @@
     "/contacts/{id}": {
       "get": {
         "description": "Get a contact by ID",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
