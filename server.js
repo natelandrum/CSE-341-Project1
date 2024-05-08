@@ -1,7 +1,6 @@
 /* eslint-disable no-undef */
-/* eslint-disable no-unused-vars */
 const express = require("express");
-const env = require("dotenv").config();
+require("dotenv").config();
 const bodyParser = require("body-parser");
 const mongodb = require("./db/connect");
 
